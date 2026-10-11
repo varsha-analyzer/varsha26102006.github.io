@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Varsha M, B.Sc. IT student and aspiring Data Analyst skilled in SQL, Python, Excel, Power BI and data visualization.">
+<title>Varsha M Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Layout: leaf-green hero with veined texture, then alternating mist/soft-green sections, cards on white */
+  :root{
+    --leaf:#7cc62a;
+    --leaf-bright:#a6e34a;
+    --green-dark:#1d5c1a;
+    --green-deep:#12400f;
+    --green-soft:#eaf7dc;
+    --green-mist:#f5fbee;
+    --text:#24331f;
+    --muted:#566a50;
+    --white:#ffffff;
+    --radius:18px;
+    --shadow:0 10px 30px rgba(40,110,20,.12);
+    --font-display:'Bebas Neue','Arial Narrow',Impact,sans-serif;
+    --font-body:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--font-body);font-size:16px;color:var(--text);background:var(--green-mist);line-height:1.7}
+  a{text-decoration:none;color:inherit}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--green-dark);outline-offset:3px}
+  .container{width:min(1100px,100%);margin-inline:auto;padding-inline:16px}
+  h1,h2,h3{font-family:var(--font-display);letter-spacing:1.5px;font-weight:400;margin:0;text-wrap:balance}
+
+  header{position:fixed;top:0;left:0;width:100%;z-index:50;background:rgba(18,64,15,.92);backdrop-filter:blur(8px);padding-top:env(safe-area-inset-top,0px)}
+  nav{display:flex;justify-content:space-between;align-items:center;padding-block:12px}
+  .logo{font-family:var(--font-display);font-size:1.8rem;color:var(--white);letter-spacing:2px;line-height:1}
+  .logo span{color:var(--leaf-bright)}
+  .nav-links{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+  .nav-links a{color:#e6f5d6;font-size:.9rem;font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--leaf-bright)}
+
+  .hero{
+    color:var(--white);
+    background:
+      repeating-linear-gradient(115deg,rgba(255,255,255,.07) 0 2px,transparent 2px 38px),
+      radial-gradient(circle at 18% 18%,rgba(166,227,74,.55) 0%,transparent 45%),
+      linear-gradient(135deg,#3f9a14 0%,#2f8512 50%,#1f6a10 100%);
+    padding-block:130px 90px;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
+  .hero-grid>*{min-width:0}
+  .eyebrow{letter-spacing:3px;font-size:.8rem;font-weight:500;text-transform:uppercase}
+  .hero h1{font-size:clamp(3.6rem,10vw,6.8rem);line-height:.95;margin:12px 0 14px}
+  .hero h2{font-family:var(--font-body);font-size:1.05rem;letter-spacing:2px;text-transform:uppercase;font-weight:500}
+  .hero p{max-width:520px;margin:18px 0 28px;font-weight:400;font-size:1.02rem}
+  .btn{display:inline-block;padding:12px 28px;border-radius:50px;font-weight:600;font-size:.92rem;transition:transform .25s,box-shadow .25s,background .25s}
+  .btn-light{background:var(--white);color:var(--green-dark)}
+  .btn-light:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
+  .btn-outline{border:2px solid var(--white);color:var(--white)}
+  .btn-outline:hover{background:var(--white);color:var(--green-dark)}
+  .btn-row{display:flex;flex-wrap:wrap;gap:12px}
+  .avatar-wrap{display:flex;justify-content:center}
+  .avatar{width:280px;max-width:100%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.18);border:6px solid rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:6rem;letter-spacing:4px;box-shadow:0 20px 45px rgba(0,0,0,.2)}
+
+  section{padding-block:90px}
+  .section-title{text-align:center;margin-bottom:50px}
+  .section-title h2{font-size:3rem;color:var(--green-dark)}
+  .section-title .bar{width:70px;height:5px;background:var(--leaf);border-radius:5px;margin:8px auto 0}
+  .alt{background:var(--green-soft)}
+
+  .about-box{background:var(--white);padding:36px;border-radius:var(--radius);box-shadow:var(--shadow)}
+  .about-box p{margin:0}
+  .about-box p+p{margin-top:14px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+  .stat{background:var(--green-soft);border-radius:14px;text-align:center;padding:18px}
+  .stat strong{display:block;font-family:var(--font-display);font-weight:400;font-size:2.2rem;line-height:1.2;color:var(--green-dark);letter-spacing:1px}
+  .stat span{font-size:.85rem;color:var(--muted)}
+
+  .chips{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  .chip{background:var(--white);border:2px solid var(--leaf);color:var(--green-dark);padding:8px 22px;border-radius:50px;font-weight:500;transition:background .25s,color .25s,transform .25s}
+  .chip:hover{background:var(--leaf);color:var(--green-deep);transform:translateY(-4px)}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:26px}
+  .card{background:var(--white);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow);border-top:6px solid var(--leaf);transition:transform .3s;display:flex;flex-direction:column;min-width:0}
+  .card:hover{transform:translateY(-8px)}
+  .card h3{font-size:1.7rem;color:var(--green-dark);margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.95rem;flex:1;margin:0}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+  .tags span{background:var(--green-soft);color:var(--green-dark);font-size:.78rem;font-weight:600;padding:4px 12px;border-radius:30px}
+  .link{color:var(--green-dark);font-weight:600;font-size:.92rem}
+  .link:hover{text-decoration:underline}
+
+  .timeline{border-left:4px solid var(--leaf);padding-left:24px;max-width:800px;margin-inline:auto}
+  .t-item{position:relative;background:var(--white);padding:26px 28px;border-radius:var(--radius);box-shadow:var(--shadow)}
+  .t-item::before{content:"";position:absolute;left:-39px;top:30px;width:18px;height:18px;background:var(--leaf);border:4px solid var(--green-mist);border-radius:50%}
+  .alt .t-item::before{border-color:var(--green-soft)}
+  .t-item h3{font-size:1.6rem;color:var(--green-dark)}
+  .t-meta{font-size:.85rem;color:var(--muted);margin-bottom:10px}
+  .t-item ul{padding-left:18px;margin:0;color:var(--muted);font-size:.93rem}
+
+  .cert{background:var(--white);padding:18px 22px;border-radius:14px;box-shadow:var(--shadow);border-left:5px solid var(--leaf);min-width:0}
+  .cert h3{font-family:var(--font-body);font-size:1rem;font-weight:600;letter-spacing:0;color:var(--green-dark)}
+  .cert p{font-size:.85rem;color:var(--muted);margin:0}
+
+  .contact{background:linear-gradient(135deg,#2f8512,#1d5c1a);color:var(--white);text-align:center}
+  .contact .section-title h2{color:var(--white)}
+  .contact .bar{background:var(--leaf-bright)}
+  .contact p{max-width:560px;margin:0 auto 22px}
+  .email-text{font-weight:600;user-select:all;word-break:break-all}
+  .contact-links{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:24px}
+
+  footer{background:var(--green-deep);color:#cfe8b8;text-align:center;padding:22px 16px;font-size:.85rem}
+
+  @media(max-width:800px){
+    .nav-links{display:none}
+    .hero{padding-block:100px 60px}
+    .hero-grid{grid-template-columns:1fr;text-align:center}
+    .hero p{margin-inline:auto}
+    .btn-row{justify-content:center}
+    .avatar-wrap{order:-1}
+    .avatar{width:200px;font-size:4rem}
+    .stats{grid-template-columns:1fr}
+    section{padding-block:64px}
+    .about-box{padding:24px}
+    .section-title h2{font-size:2.6rem}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">VARSHA<span>.M</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Hello, I'm</div>
+      <h1>Varsha M</h1>
+      <h2>Aspiring Data Analyst</h2>
+      <p>B.Sc. Information Technology student turning raw data into clear insights using SQL, Python, Excel and Power BI.</p>
+      <div class="btn-row">
+        <a href="#projects" class="btn btn-light">View My Projects</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+    </div>
+    <div class="avatar-wrap"><div class="avatar">VM</div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-title"><h2>About Me</h2><div class="bar"></div></div>
+    <div class="about-box">
+      <p>I am a B.Sc. Information Technology student aspiring to build my career as a Data Analyst, with hands-on experience working with data using SQL, Python, Excel, Power BI, and data visualization.</p>
+      <p>I enjoy working with data to clean, analyze, visualize, and identify meaningful insights that can support better decision-making. I have worked on projects involving data analysis and machine learning, and I am currently gaining practical exposure through my internship at Elysium Group of Companies.</p>
+      <p>I am actively looking for opportunities as a <strong>Data Analyst / Junior Data Analyst</strong>, where I can apply my analytical skills, continue learning, and contribute to real-world data-driven projects.</p>
+      <div class="stats">
+        <div class="stat"><strong>3</strong><span>Data Projects</span></div>
+        <div class="stat"><strong>7</strong><span>Certifications</span></div>
+        <div class="stat"><strong>2027</strong><span>Graduating</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="alt">
+  <div class="container">
+    <div class="section-title"><h2>Technical Skills</h2><div class="bar"></div></div>
+    <div class="chips">
+      <span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Microsoft Excel</span><span class="chip">Power BI</span><span class="chip">Data Visualization</span><span class="chip">Data Analysis</span><span class="chip">Machine Learning</span><span class="chip">Logistic Regression</span><span class="chip">Streamlit</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-title"><h2>Projects</h2><div class="bar"></div></div>
+    <div class="cards">
+      <div class="card">
+        <h3>Superstore Sales Data Analysis</h3>
+        <p>Analyzed the Superstore dataset to explore sales, profit, categories, regions, and business trends. Performed data cleaning and analysis and created visualizations to identify meaningful insights from the data.</p>
+        <div class="tags"><span>Python</span><span>Pandas</span><span>Power BI</span></div>
+        <a class="link" href="https://github.com/varsha26102006" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <div class="card">
+        <h3>E-commerce Book Price Analysis</h3>
+        <p>Analyzed e-commerce book data to explore prices and identify pricing patterns. Cleaned and processed the dataset, performed exploratory analysis, and created visualizations to understand price trends and distribution.</p>
+        <div class="tags"><span>Python</span><span>Pandas</span><span>SQLite</span><span>Power BI</span><span>Jupyter</span></div>
+        <a class="link" href="https://github.com/varsha26102006" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+      <div class="card">
+        <h3>AI/ML Mini Project</h3>
+        <p>Developed a machine learning mini project using Python, covering data preprocessing, feature and target selection, train-test splitting, and model development with scikit-learn.</p>
+        <div class="tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>Streamlit</span></div>
+        <a class="link" href="https://github.com/varsha26102006" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="alt">
+  <div class="container">
+    <div class="section-title"><h2>Experience</h2><div class="bar"></div></div>
+    <div class="timeline">
+      <div class="t-item">
+        <h3>AI &amp; Machine Learning Intern</h3>
+        <div class="t-meta">Elysium Group of Companies · Apr 2026 – Present · Madurai, Tamil Nadu (On-site)</div>
+        <ul>
+          <li>Gained hands-on experience in Artificial Intelligence and Machine Learning using Python.</li>
+          <li>Worked with datasets and performed data preprocessing, including handling missing values.</li>
+          <li>Used Pandas and NumPy for data manipulation and analysis.</li>
+          <li>Applied machine learning concepts using scikit-learn, including train-test split and model building.</li>
+          <li>Worked on a mini project and explored deploying a machine learning application using Streamlit.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <div class="section-title"><h2>Education</h2><div class="bar"></div></div>
+    <div class="timeline">
+      <div class="t-item">
+        <h3>B.Sc. Information Technology</h3>
+        <div class="t-meta">G. Venkataswamy Naidu College, Kovilpatti · Jun 2024 – Apr 2027 · Grade: A+</div>
+        <ul><li>Relevant areas: Programming, Database Management, Data Analysis, and Information Technology.</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications" class="alt">
+  <div class="container">
+    <div class="section-title"><h2>Certifications</h2><div class="bar"></div></div>
+    <div class="cards">
+      <div class="cert"><h3>Google Analytics Certification</h3><p>Skillshop · Aug 2026</p></div>
+      <div class="cert"><h3>Internship Common Aptitude Test (iCAT)</h3><p>Internship Studio · Aug 2026</p></div>
+      <div class="cert"><h3>Data Fundamentals</h3><p>IBM SkillsBuild</p></div>
+      <div class="cert"><h3>Data Science &amp; Analytics</h3><p>HCL GUVI · Nov 2025</p></div>
+      <div class="cert"><h3>Introduction to Data Engineering and Big Data</h3><p>HCL GUVI · Jul 2025</p></div>
+      <div class="cert"><h3>Java for Beginners</h3><p>HCL GUVI · Jul 2025</p></div>
+      <div class="cert"><h3>Python</h3><p>HCL GUVI · Nov 2024</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-title"><h2>Let's Connect</h2><div class="bar"></div></div>
+    <p>I'm looking for Data Analyst / Junior Data Analyst opportunities. If you have a role or project in mind, I'd love to hear from you.</p>
+    <p class="email-text">varshajaimohan@gmail.com</p>
+    <div class="contact-links">
+      <a class="btn btn-light" href="https://www.linkedin.com/in/varsha-m-009809400/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-outline" href="https://github.com/varsha26102006" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Varsha M. All rights reserved.</footer>
+</body>
+</html>
